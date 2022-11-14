@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -11,15 +12,23 @@
 
 <script>
     var spreadsheetUrl = "https://docs.google.com/spreadsheets/d/1TFm3Q_Ccyn3fcBqLjcVn8z5KueqXlG5gpW06pXBsSAg/edit#gid=";
-    var sheetIds = ["0",];
+    var sheetIds = ["0"];
     var currentSheet = 0; //0-3
     var myIframe = document.getElementById("iframe1");
 
     // Initializes iframe
     myIframe.src = spreadsheetUrl + sheetIds[currentSheet];
 
+    // Updates iframe very 10,000 milliseconds
+    setInterval(function() {
+        // Increases sheet
+        currentSheet++;
+
+        // If 4th sheet has been shown, then go back to 1st sheet
+        if (currentSheet > 3)
+            currentSheet = 0;
+
         // Updates iframe
         myIframe.src = spreadsheetUrl + sheetIds[currentSheet];
     }, 10000);
 </script>
-</html>
