@@ -10,9 +10,9 @@
 </body>
 
 <script>
-    var spreadsheetUrl = "https://docs.google.com/spreadsheets/d/1ls47_x93IWW8COgre0bae0LpQK_1LEJY1pdm3kT4OsY/edit#gid=";
-    var sheetIds = ["818901237"];
-    var currentSheet = 0; //0-3
+    var spreadsheetUrl = "https://docs.google.com/spreadsheets/d/1TFm3Q_Ccyn3fcBqLjcVn8z5KueqXlG5gpW06pXBsSAg/edit#gid=";
+    var sheetIds = ["0","1419405480"];
+    var currentSheet = 1; //0-3
     var myIframe = document.getElementById("iframe1");
 
     // Initializes iframe
@@ -24,8 +24,8 @@
         currentSheet++;
 
         // If 4th sheet has been shown, then go back to 1st sheet
-        if (currentSheet > 0)
-            currentSheet = 0;
+        if (currentSheet > 3)
+            currentSheet = 1;
 
         // Updates iframe
         myIframe.src = spreadsheetUrl + sheetIds[currentSheet];
